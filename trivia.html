@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="night">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Trivia Night at The PreGame. Smart drinks, smarter teams, and zero cover. Prizes, bragging rights, and affordable drinks on NW 23rd.">
+    <title>Trivia Night | The PreGame</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* Page-specific overrides */
+        .page-hero {
+            height: 60vh;
+            min-height: 500px;
+        }
+
+        .content-section {
+            padding: var(--space-xl) 0;
+            background: var(--bg-secondary);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav__container">
+            <a href="index.html" class="nav__logo"><span class="nav__logo-icon">⬡</span><span
+                    class="nav__logo-text">PREGAME</span></a>
+            <ul class="nav__links">
+                <li><a href="index.html#concept">The Concept</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="index.html#location">Visit</a></li>
+            </ul>
+            <div class="nav__actions">
+                <a href="index.html#location" class="btn btn--primary">Visit Us</a>
+            </div>
+            <button class="nav__mobile-toggle" id="mobileToggle"
+                aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <header class="hero page-hero" id="hero">
+        <div class="hero__bg hero__bg--night" style="opacity: 1;"></div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <p class="hero__location">TUESDAYS AT 7:00 PM</p>
+            <h1 class="hero__title">
+                <span class="hero__title-line">SMART DRINKS.</span>
+                <span class="hero__title-line hero__title-line--accent">SMARTER TEAMS.</span>
+            </h1>
+            <p class="hero__subtitle">Trivia Night at The PreGame. Zero Cover. All Logic.</p>
+        </div>
+    </header>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="text-content">
+                    <div class="section-header">
+                        <span class="section-header__tag">GAME OF MINDS</span>
+                        <h2 class="section-header__title">WHY PLAY HERE?</h2>
+                    </div>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-secondary);">
+                        Looking for a reason to get out of the house? Trivia Night at The PreGame brings the perfect mix
+                        of competition, laughs, and affordable drinks—right on NW 23rd.
+                    </p>
+                    <ul class="concept__card-features" style="margin-bottom: 2rem;">
+                        <li>No cover charge</li>
+                        <li>Affordable drinks all night</li>
+                        <li>To-go margaritas available</li>
+                        <li>Pool and games before & after trivia</li>
+                        <li>Front patio seating for halftime breaks</li>
+                    </ul>
+                    <p style="font-weight: 600; color: var(--text-primary);">
+                        Whether you're building a serious trivia squad or just showing up for the fun, Trivia Night is
+                        about bragging rights, good vibes, and not taking yourself too seriously.
+                    </p>
+                </div>
+                <div class="visual-content"
+                    style="background: var(--bg-card); padding: var(--space-lg); border-radius: var(--radius-lg); border: 2px solid var(--chalk); box-shadow: var(--shadow);">
+                    <div class="section-header">
+                        <span class="section-header__tag" style="color: var(--accent-secondary);">THE RULES</span>
+                        <h2 class="section-header__title" style="font-size: 2rem;">HOW IT WORKS</h2>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+                        <div
+                            style="background: var(--accent-primary); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-accent);">
+                            1</div>
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 0.25rem;">
+                                Bring Your Team</h4>
+                            <p style="color: var(--text-secondary);">Or join one here. We're friendly like that.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+                        <div
+                            style="background: var(--accent-primary); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-accent);">
+                            2</div>
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 0.25rem;">
+                                Mixed Categories</h4>
+                            <p style="color: var(--text-secondary);">History, Pop Culture, Sports, and random facts you
+                                thought you forgot.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+                        <div
+                            style="background: var(--accent-primary); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-accent);">
+                            3</div>
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 0.25rem;">
+                                Win Prizes</h4>
+                            <p style="color: var(--text-secondary);">House bragging rights and prizes for top teams.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px dashed var(--text-muted);">
+                        <p
+                            style="font-family: var(--font-accent); font-size: 1.2rem; color: var(--accent-primary); text-transform: uppercase;">
+                            Pro Tip: Show up early, grab a drink, lock in your table.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location" id="location">
+        <div class="container">
+            <div class="location__grid">
+                <div class="location__info">
+                    <div class="section-header">
+                        <span class="section-header__tag">FIND US</span>
+                        <h2 class="section-header__title">2120 NW 23RD ST, OKC</h2>
+                        <p class="location__description"
+                            style="color: var(--text-secondary); font-size: 1.25rem; font-weight: 700;">No cover. Ever.
+                        </p>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="btn btn--primary btn--lg">Get
+                        Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo"><span class="footer__logo-icon">⬡</span><span
+                            class="footer__logo-text">PREGAME</span></a>
+                    <p class="footer__tagline">Coffee by Day. Cocktails by Night.<br>The perfect place to start your
+                        night.</p>
+                </div>
+                <div class="footer__links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#concept">The Concept</a></li>
+                        <li><a href="index.html#menu">Menu</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer__bottom"
+                    style="width: 100%; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; padding-top: 2rem;">
+                    <p>&copy; 2026 The PreGame OKC. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Minimal nav script for pages
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.querySelector('.nav__links');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('nav__links--open');
+            mobileToggle.classList.toggle('active');
+        });
+
+        // Ensure night mode styles are consistent
+        document.documentElement.setAttribute('data-mode', 'night');
+    </script>
+</body>
+
+</html>

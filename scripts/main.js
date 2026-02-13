@@ -9,9 +9,101 @@ document.addEventListener('DOMContentLoaded', () => {
     initMenuTabs();
     initMenuData();
     initEventsData();
+    initTaglineRotation();
     initScrollAnimations();
     initCounters();
 });
+
+// ---- Time-Based Tagline Rotation ----
+function initTaglineRotation() {
+    const heroTitle = document.querySelector('.hero__title');
+    const heroSubtitle = document.querySelector('.hero__subtitle');
+    
+    if (!heroTitle || !heroSubtitle) return;
+
+    const hour = new Date().getHours();
+    let timeOfDay = 'morning'; // Default
+
+    if (hour >= 6 && hour < 12) timeOfDay = 'morning';
+    else if (hour >= 12 && hour < 17) timeOfDay = 'afternoon';
+    else if (hour >= 17 || hour < 6) timeOfDay = 'evening';
+    
+    // Data for taglines
+    const taglines = {
+        morning: {
+            headlines: [
+                { line1: 'WORK FROM HERE.', line2: 'WE’LL KEEP THE COFFEE COMING.' },
+                { line1: 'YOUR OFFICE,', line2: 'BUT BETTER.' },
+                { line1: 'FREE WI-FI. REAL COFFEE.', line2: 'ZERO ZOOM FATIGUE.' },
+                { line1: 'TIRED OF WORKING FROM HOME?', line2: 'UPGRADE YOUR DESK.' },
+                { line1: 'COFFEE FIRST.', line2: 'EVERYTHING ELSE LATER.' }
+            ],
+            subline: 'Fresh coffee, comfortable space, and fast Wi-Fi right on NW 23rd.'
+        },
+        afternoon: {
+            headlines: [
+                { line1: 'CLOCK OUT', line2: 'EARLY.' },
+                { line1: 'START THE', line2: 'PREGAME.' },
+                { line1: 'COFFEE OR COCKTAILS —', line2: 'YOUR CALL.' },
+                { line1: 'MIDDAY RESET', line2: 'STARTS HERE.' },
+                { line1: 'GOOD VIBES', line2: 'BEFORE THE NIGHT BEGINS.' }
+            ],
+            subline: 'Affordable drinks, games, patio seating, and no cover—ever.'
+        },
+        evening: {
+            headlines: [
+                { line1: 'START THE NIGHT', line2: 'AT THE PREGAME.' },
+                { line1: 'WHERE OKC', line2: 'PREGAMES.' },
+                { line1: 'DRINKS. GAMES.', line2: 'NO COVER.' },
+                { line1: 'YOUR NIGHT', line2: 'STARTS HERE.' },
+                { line1: 'MEET HERE', line2: 'BEFORE ANYWHERE.' }
+            ],
+            subline: 'Pool, darts, cornhole, trivia, karaoke, and front-row patio vibes on NW 23rd.'
+        }
+    };
+
+    // Special override for Event Nights (needs logic to determine if tonights an event)
+    const day = new Date().getDay(); // 0-6 Sun-Sat
+    const isTriviaNight = day === 2; // Tuesday
+    const isKaraokeNight = day === 5; // Friday
+    
+    let selectedContent = taglines[timeOfDay];
+    
+    if (hour >= 17) {
+        if (isTriviaNight) {
+             selectedContent = {
+                headlines: [
+                    { line1: 'TONIGHT’S NOT', line2: 'A STAY-HOME NIGHT.' },
+                    { line1: 'GRAB YOUR TEAM.', line2: 'GRAB THE MIC.' }, // Maybe shared?
+                    { line1: 'SMART DRINKS.', line2: 'SMARTER TEAMS.' },
+                    { line1: 'NO COVER.', line2: 'ALL ENERGY.' }
+                ],
+                subline: 'Trivia Night: Prizes, bragging rights, and cold drinks.'
+            };
+        } else if (isKaraokeNight) {
+             selectedContent = {
+                headlines: [
+                    { line1: 'YOUR SONG.', line2: 'YOUR STAGE.' },
+                    { line1: 'GRAB THE MIC.', line2: 'WE’LL HANDLE THE DRINKS.' },
+                    { line1: 'COME FOR THE DRINKS.', line2: 'STAY FOR THE SHOW.' },
+                    { line1: 'NO COVER.', line2: 'ALL ENERGY.' }
+                ],
+                subline: 'Karaoke Night: Sing solo, bring a duet, or just enjoy the show.'
+            };
+        }
+    }
+
+    // Pick a random headline from the available options
+    const randomIndex = Math.floor(Math.random() * selectedContent.headlines.length);
+    const headline = selectedContent.headlines[randomIndex];
+
+    // Update DOM
+    heroTitle.innerHTML = `
+        <span class="hero__title-line">${headline.line1}</span>
+        <span class="hero__title-line hero__title-line--accent">${headline.line2}</span>
+    `;
+    heroSubtitle.textContent = selectedContent.subline;
+}
 
 // ---- Day/Night Mode Toggle ----
 function initModeToggle() {
@@ -181,21 +273,23 @@ function initEventsData() {
 
     const events = [
         { day: 'MON', title: 'MONDAY NIGHT FOOTBALL', desc: '$3 domestic drafts during the game. Every. Single. Monday.', time: 'Kickoff to Final Whistle' },
-        { day: 'TUE', title: 'TRIVIA TUESDAY', desc: 'Test your sports knowledge. Win prizes. Defend your honor.', time: '7:00 PM' },
+        { day: 'TUE', title: 'TRIVIA TUESDAY', desc: 'Test your sports knowledge. Win prizes. Defend your honor.', time: '7:00 PM', link: 'trivia.html' },
         { day: 'WED', title: 'WINE DOWN WEDNESDAY', desc: 'Half-price wine all evening. Classy midweek reset.', time: '4PM — Close' },
         { day: 'THU', title: 'THROWBACK THURSDAY', desc: 'Classic games on every screen. Retro drink specials.', time: 'All Night' },
+        { day: 'FRI', title: 'KARAOKE NIGHT', desc: 'Your song. Your stage. No cover. Liquid courage available.', time: '8:00 PM', link: 'karaoke.html' },
         { day: 'SAT', title: 'GAME DAY HEADQUARTERS', desc: 'THE place to watch Oklahoma football. Arrive early or miss out.', time: 'All Day Event', featured: true },
         { day: 'SUN', title: 'SUNDAY FUNDAY', desc: 'NFL all day. Brunch cocktails. Bottomless mimosas until 2pm.', time: '10AM — Close' }
     ];
 
     eventsGrid.innerHTML = events.map(event => `
-        <div class="events__card ${event.featured ? 'events__card--featured' : ''}">
+        <${event.link ? 'a href="' + event.link + '"' : 'div'} class="events__card ${event.featured ? 'events__card--featured' : ''}" ${event.link ? 'style="display: block; text-decoration: none; color: inherit; cursor: pointer;"' : ''}>
             <div class="events__card-day">${event.day}</div>
             <h3 class="events__card-title">${event.title}</h3>
             <p class="events__card-desc">${event.desc}</p>
             <span class="events__card-time">${event.time}</span>
             ${event.featured ? '<div class="events__card-badge">FEATURED</div>' : ''}
-        </div>
+            ${event.link ? '<div class="events__card-link">Learn More &rarr;</div>' : ''}
+        </${event.link ? 'a' : 'div'}>
     `).join('');
 }
 

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="night">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Karaoke Night at The PreGame. Your song, your stage, no cover. Sing solo or bring a crew. NW 23rd St, OKC.">
+    <title>Karaoke Night | The PreGame</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* Page-specific overrides */
+        .page-hero {
+            height: 60vh;
+            min-height: 500px;
+        }
+
+        .content-section {
+            padding: var(--space-xl) 0;
+            background: var(--bg-secondary);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Neon text effect for Karaoke */
+        .neon-text {
+            color: var(--accent-primary);
+            text-shadow: 0 0 10px var(--accent-primary), 0 0 20px var(--accent-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav__container">
+            <a href="index.html" class="nav__logo"><span class="nav__logo-icon">⬡</span><span
+                    class="nav__logo-text">PREGAME</span></a>
+            <ul class="nav__links">
+                <li><a href="index.html#concept">The Concept</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="index.html#location">Visit</a></li>
+            </ul>
+            <div class="nav__actions">
+                <a href="index.html#location" class="btn btn--primary">Visit Us</a>
+            </div>
+            <button class="nav__mobile-toggle" id="mobileToggle"
+                aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <header class="hero page-hero" id="hero">
+        <div class="hero__bg hero__bg--night" style="opacity: 1;"></div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <p class="hero__location">FRIDAYS AT 8:00 PM</p>
+            <h1 class="hero__title">
+                <span class="hero__title-line">YOUR SONG.</span>
+                <span class="hero__title-line hero__title-line--accent neon-text">YOUR STAGE.</span>
+            </h1>
+            <p class="hero__subtitle">Karaoke Night at The PreGame. No Cover. All Vibe.</p>
+        </div>
+    </header>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="text-content">
+                    <div class="section-header">
+                        <span class="section-header__tag">MIC DROP</span>
+                        <h2 class="section-header__title">WHAT TO EXPECT</h2>
+                    </div>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-secondary);">
+                        Some nights are meant to stay quiet. This isn’t one of them.
+                    </p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                        Karaoke Night at The PreGame is where NW 23rd comes to sing—whether you’re a rock star, a shower
+                        singer, or just here to cheer your friends on.
+                    </p>
+                    <ul class="concept__card-features" style="margin-bottom: 2rem;">
+                        <li>No cover charge</li>
+                        <li>Affordable drinks</li>
+                        <li>Crowd energy without the chaos</li>
+                        <li>Full bar + to-go margaritas</li>
+                        <li>Pool and games between songs</li>
+                        <li>Patio for cooling off after your encore</li>
+                    </ul>
+                    <p style="font-weight: 600; color: var(--text-primary);">
+                        Sing solo. Bring a duet partner. Get the whole group up there. This isn’t about perfection—it’s
+                        about fun.
+                    </p>
+                </div>
+                <div class="visual-content" style="text-align: center;">
+                    <div
+                        style="background: var(--bg-card); padding: var(--space-lg); border-radius: var(--radius-lg); border: 2px solid var(--accent-primary); box-shadow: 0 0 30px rgba(158, 27, 50, 0.2);">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">🎤</div>
+                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; text-transform: uppercase;">Grab
+                            the Mic</h3>
+                        <p
+                            style="font-family: var(--font-accent); font-size: 1.5rem; color: var(--accent-primary); margin-bottom: 1.5rem;">
+                            WE'LL HANDLE THE DRINKS.</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                            Whether you're starting your night here or ending it loud, Karaoke Night hits different at
+                            The PreGame.
+                        </p>
+                        <div
+                            style="display: inline-block; padding: 1rem 2rem; background: var(--bg-secondary); border-radius: 4px; font-weight: bold;">
+                            📍 2120 NW 23rd St, OKC
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location" id="location">
+        <div class="container">
+            <div class="location__grid">
+                <div class="location__info">
+                    <div class="section-header">
+                        <span class="section-header__tag">THE DETAILS</span>
+                        <h2 class="section-header__title">FREE WI-FI. NO COVER. ALWAYS.</h2>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="btn btn--primary btn--lg">Get
+                        Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo"><span class="footer__logo-icon">⬡</span><span
+                            class="footer__logo-text">PREGAME</span></a>
+                    <p class="footer__tagline">Coffee by Day. Cocktails by Night.<br>The perfect place to start your
+                        night.</p>
+                </div>
+                <div class="footer__links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#concept">The Concept</a></li>
+                        <li><a href="index.html#menu">Menu</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer__bottom"
+                    style="width: 100%; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; padding-top: 2rem;">
+                    <p>&copy; 2026 The PreGame OKC. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Minimal nav script for pages
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.querySelector('.nav__links');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('nav__links--open');
+            mobileToggle.classList.toggle('active');
+        });
+
+        // Ensure night mode styles are consistent
+        document.documentElement.setAttribute('data-mode', 'night');
+    </script>
+</body>
+
+</html>
